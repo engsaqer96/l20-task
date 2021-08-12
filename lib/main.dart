@@ -3,7 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:state_mangment_project/providers/myprovider.dart';
 import 'package:state_mangment_project/screens/home.dart';
 
-void main() {
+import 'helpers/db_helper.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DBHelper.dbhelper.initDataBase();
   runApp(MyApp());
 }
 
